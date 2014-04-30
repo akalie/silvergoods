@@ -18,10 +18,17 @@ $adress = $_POST['adress'];
 $kolvo = $_POST['kolvo'];
 $num = $_POST['num'];
 $phone = '+7(909)588-64-58';
+$logFilePath = 'ordersLog.txt';
+$handle = fopen($logFilePath, 'a');
+
+
 
 $adminEmail = 'starsmaster@allsocial.ru';
 
 $mess = "Новый заказ Серебряной ложки.<br/>Ложка №".$num." в количестве $kolvo <br/>ФИО: ".$fio."<br/>"."E-mail: ".$email."<br/>"."<br/>Телефон: ".$tel."<br/>Адрес: ".$adress;
+
+fwrite($handle, $mess . PHP_EOL);
+fclose($handle);
 
 SendMail($adminEmail, 'Новый заказ Серебряной ложки', $mess);
 
