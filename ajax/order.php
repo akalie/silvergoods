@@ -21,7 +21,7 @@ $phone = '+7(909)588-64-58';
 
 $adminEmail = 'starsmaster@allsocial.ru';
 
-$mess = "Новый заказ Серебряной ложки.<br/>Ложка №".$num." <br/>ФИО: ".$fio."<br/>"."E-mail: ".$email."<br/>"."<br/>Телефон: ".$tel."<br/>Адрес: ".$adress;
+$mess = "Новый заказ Серебряной ложки.<br/>Ложка №".$num." в количестве $kolvo <br/>ФИО: ".$fio."<br/>"."E-mail: ".$email."<br/>"."<br/>Телефон: ".$tel."<br/>Адрес: ".$adress;
 
 SendMail($adminEmail, 'Новый заказ Серебряной ложки', $mess);
 
