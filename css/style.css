@@ -76,6 +76,7 @@ text-transform:uppercase;
 position:absolute;
 right:0;
 z-index:5;
+text-align: right;
 }
 .banner{
 float:left;

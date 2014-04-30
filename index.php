@@ -17,8 +17,8 @@
 	<div class=wrapper>
 		<div class=header>
             <div class=phone>
-                <!--Наш телефон<br/><br/>
-                (499) 704-39-82-->
+                Наш телефон<br/><br/>
+                +7(909)588-64-58
             </div>
 			<div class=main>
 				<div class=htext>
