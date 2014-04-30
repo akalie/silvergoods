@@ -6,7 +6,7 @@ function SendMail($em_to,$subject,$mess)
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
     $headers .= 'To: '.$em_to . "\r\n";
-    $headers .= 'From: SilverGoods <noreply@silvergoods.net>' . "\r\n";
+    $headers .= 'From: SilverGoods <noreply@silvergoods.ru>' . "\r\n";
 
     mail($em_to, $subject, $mess, $headers);
 }
@@ -20,8 +20,6 @@ $num = $_POST['num'];
 $phone = '+7(909)588-64-58';
 $logFilePath = 'ordersLog.txt';
 $handle = fopen($logFilePath, 'a');
-
-
 
 $adminEmail = 'starsmaster@allsocial.ru';
 
