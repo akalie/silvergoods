@@ -26,7 +26,7 @@
 					Серебряные ложки от известного ювелира Проворова
 Идеальный подарок — серебряные ложки 925 пробы по cпециальной самой низкой цене в интернете!
 				</div>
-				
+
 				<div class=block-exclusive>
 					<div class=ex-head></div>
 					<div class=ex-body>
@@ -60,7 +60,7 @@
 				<div class=banner>
 					<img src="images/banner-time.png" /><br/>
 					<span>Осталось 17 ложек со скидкой</span>
-					
+
 				</div>
 				<div class=timer>
 					<div id="countdown"></div>
@@ -106,22 +106,23 @@
 		<div class=about>
 			<div class=main>
 				<h1>Серебряные ложки</h1>
-				
+
 				<div class=info>
-					7 серебряных ложек с оригинальным литьём на любой вкус. У каждого изделия есть клеймо изготовителя и Государственной Инспекции Пробирного Надзора. 
+					7 серебряных ложек с оригинальным литьём на любой вкус. У каждого изделия есть клеймо изготовителя и Государственной Инспекции Пробирного Надзора.
 Только 100% качество и гарантия!<br/><br/>
 					<div class=gallery style="margin-bottom:20px;">
 						<div class=gallery_container>
 							<img src="images/1.jpg" class='gallery_main animation in'>
 						</div>
 						<div class=gallery_thumbnails>
+							<div class="gallery_thumbnail active"><img src="images/1.jpg"></div>
 							<div class=gallery_thumbnail><img src="images/2.jpg"></div>
 							<div class=gallery_thumbnail><img src="images/3.jpg"></div>
 							<div class=gallery_thumbnail><img src="images/4.jpg"></div>
                             <div class=gallery_thumbnail><img src="images/5.jpg"></div>
 							<div class=gallery_thumbnail><img src="images/6.jpg"></div>
 							<div class=gallery_thumbnail><img src="images/7.jpg"></div>
-						</div>				
+						</div>
 					</div>
 				</div>
 				<div class=clear></div><br/>
@@ -165,7 +166,7 @@
 							<strong>Артем Ильин</strong><br/>
 							<small>г. Смоленск</small>
 						</div>
-						Друзья пригласили нас на крещение своего третьего ребенка. Нужно было что-то подарить, мне пришла идея подарить малышу 
+						Друзья пригласили нас на крещение своего третьего ребенка. Нужно было что-то подарить, мне пришла идея подарить малышу
 						серебряную ложку, ведь это хорошая традиция в России. А зная родителей, я был уверен, что и они будут рады.
 					</div>
 					<div class=clear></div>
@@ -211,7 +212,7 @@
 							<strong>Лилия Живцева</strong><br/>
 							<small>г. Тобольск</small>
 						</div>
-						Заказала в довесок к золотым колечкам. Раньше в магазине ювелирки работала - так вот, могу сказать, что серебро качественное. Берите - не пожалеете! 
+						Заказала в довесок к золотым колечкам. Раньше в магазине ювелирки работала - так вот, могу сказать, что серебро качественное. Берите - не пожалеете!
 					</div>
 					<div class=clear></div>
 				</div>
@@ -222,7 +223,7 @@
 							<strong>Павел Иванов</strong><br/>
 							<small>г. Казань</small>
 						</div>
-                       До Казани посылка дошла за 7 дней. Теперь ем йогурт по утрам вашей ложкой) 
+                       До Казани посылка дошла за 7 дней. Теперь ем йогурт по утрам вашей ложкой)
 					</div>
 					<div class=clear></div>
 				</div>
@@ -307,7 +308,7 @@
 		<div id=buy class=footer>
 		    <div class=main>
 				<center>
-				<h1>Купи серебряную ложку сегодня!</h1><br/><br/>	
+				<h1>Купи серебряную ложку сегодня!</h1><br/><br/>
 				<form class=sval-form method=POST>
 				<input name=fio type=text sval="ФИО" value="ФИО" />
 				<input name=email type=text sval="E-mail" value="E-mail"/>
@@ -330,7 +331,7 @@
 		</div>
 		<center class=copy>2014 &copy; <a href="http://sites-stroy.ru/" target=_blank>Sites-Stroy.ru - создание и сопровождение сайтов.</a></center>
 	</div>
-	<div id="suc_order" class="modal_window"> 
+	<div id="suc_order" class="modal_window">
 		<div class="close"></div>
 		<p>Мы отправили на ваш email письмо с данными заказа, если вы его там не нашли - посмотрите в спаме.</p>
 	</div>
