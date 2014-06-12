@@ -32,11 +32,11 @@
 					<div class=ex-body>
 						<div class=stock-price></div>
 						<small>Заполните пожалуйста поля</small>
-						<form class=sval-form method=POST>
-						<input name=fio type=text sval="ФИО" value="ФИО"/>
-						<input name=email type=text sval="E-mail" value="E-mail"/>
-						<input name=tel type=text sval="Телефон" value="Телефон"/>
-						<input name=adress type=text sval="Адрес (индекс, город и т. д.)" value="Адрес (индекс, город и т. д.)"/>
+						<form class=sval-form method=POST action="ajax/order.php" target="silv">
+                            <input name=fio type=text sval="ФИО" value="ФИО"/>
+                            <input name=email type=text sval="E-mail" value="E-mail"/>
+                            <input id="tel" name=tel type=text sval="+7(___) ___-__-__" value="+7(___) ___-__-__"/>
+                            <input name=adress type=text sval="Адрес (индекс, город и т. д.)" value="Адрес (индекс, город и т. д.)"/>
 						<input name=kolvo type=text sval="Количество" value="Количество"/>
 						<select name=number type=text sval="№ ложки" value="№ ложки">
                             <option>Ложка №1</option>
@@ -47,7 +47,7 @@
 							<option>Ложка №6</option>
 							<option>Ложка №7</option>
                         </select>
-						<button class="buy">КУПИТЬ</button>
+                            <button class="buy">КУПИТЬ</button>
 						</form>
 						<br/>
 					</div>
@@ -309,10 +309,10 @@
 		    <div class=main>
 				<center>
 				<h1>Купи серебряную ложку сегодня!</h1><br/><br/>
-				<form class=sval-form method=POST>
+				<form class=sval-form method=POST action="ajax/order.php" target="silv">
 				<input name=fio type=text sval="ФИО" value="ФИО" />
 				<input name=email type=text sval="E-mail" value="E-mail"/>
-				<input name=tel type=text sval="Телефон" value="Телефон" />
+				<input id="tel2" name=tel type=text sval="+7(___) ___-__-__" value="+7(___) ___-__-__"/>
 				<input name=adress type=text sval="Адрес (индекс, город и т. д.)" value="Адрес (индекс, город и т. д.)"/>
 				<input name=kolvo type=text sval="Количество" value="Количество"/>
 				<select name=number type=text sval="№ ложки" value="№ ложки">

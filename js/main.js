@@ -14,6 +14,12 @@ $(function(){
 		timestamp	: ts
 	});
 
+	setMask('tel','+7(999) 999-99-99');
+	setMask('tel2','+7(999) 999-99-99');
+	$("input[name='fio']").keyup(function(){
+		$(this).val($(this).val().replace(/[-0-9)(_!'&\$@%\*\.]/,''));
+
+	});
 	var $gallery=$('.gallery');
 
 	$.each($gallery, function( no_, gallery_ ) {
@@ -65,20 +71,24 @@ $(function(){
 			$(this).val(sval);
 	});
 
-	$(".buy").bind("click", function(e){
+	$(".sval-form").bind("submit", function(e){
 	    var form = $(this).parent();
 		var err = false;
 		form.find('input').each(function(){
 			if($(this).attr('name')!="kolvo" && ($(this).val()=="" || $(this).val()==$(this).attr('sval')))
 			{
-				alert("Заполните все поля!");
 				err = true;
 				return false;
 			}
 		});
-		if(err)
-			return false;
-        console.log(yaCounter24881333.reachGoal('silverBuy'));
+
+		if (err) {
+            alert("Заполните все поля!");
+            e.preventDefault();
+            return false;
+        }
+
+
 		var fio = form.find('input[name="fio"]').val();
 		var email = form.find('input[name="email"]').val();
 		var tel = form.find('input[name="tel"]').val();
@@ -86,18 +96,23 @@ $(function(){
 		var kolvo = form.find('input[name="kolvo"]').val();
 		var num = form.find('select[name="number"]').val();
 
-		if(kolvo=="Количество")
-			kolvo = 1;
-		$.ajax({
-			type: "POST",
-			url: "ajax/order.php",
-			data: "fio="+fio+"&email="+email+"&tel="+tel+"&adress="+adress+"&kolvo="+kolvo+"&num="+num,
-			success: function(response){
-				openModal('suc_order');
-				$('#scroller').click();
-			}
-		});
-		return false;
+        if (kolvo=="Количество") {
+            kolvo = 1;
+        }
+
+        form.find('input[name="kolvo"]').val(kolvo);
+
+        //Все заебебца отправляем и сбрасываем
+        setTimeout(function () {
+            form.find('input').each(function () {
+                var $e = $(this);
+
+                $e.val($e.attr('sval'));
+            });
+        }, 500);
+
+        window.open('', 'silv', 'top=200,left=200,width=450,height=300,resizable=yes,scrollbars=yes');
+		return true;
 	});
 
 });
@@ -139,4 +154,119 @@ function closeModal(id)
 {
 	$('#mask').remove();
 	$('#'+id).fadeOut(300);
+}
+
+
+function setMask(I,M){
+	function R(s){return new RegExp('('+s.replace(/\(/g,'\\(').replace(/\)/g,'\\)').replace(/\//g,'\\/').replace(/9/g,'\\d').replace(/a/g,'[a-zа-яё]').replace(/\*/g,'[a-zа-яё0-9]')+')','gi')}
+	function N(c,j,x){
+		for(var k=0,s='';k<L;k++)s+=$[k]||c||'_';
+		I.value=s;
+		x?0:I.sC(!j?i:0)
+	}
+	function D(e,p,i){
+		p=I.gC();
+		if (p[0]==p[1]) {
+			if(e)p[1]++;
+			else p[0]--
+		}
+		for(i=p[0];i<p[1];i++)
+			if(!S[i]&&$[i]){
+				$[i]=0;
+				j--
+			}
+		return p
+	}
+	function V(){
+		setTimeout(function(k){
+				if (R(M).test(I.value)) {
+					I.value=RegExp.$1;
+					$=I.value.split('');
+					for(k=j=0;k<L;k++)if(!S[k])j++
+				}
+				else N()
+			},0)
+	}
+	function P(c){
+		if (c<35&&c!=8||c==45) return 1;
+		switch(c){
+			case 8:		i=D()[0]; return 0;
+			case 46:	i=D(1)[1]; return 0;
+			case 35:	i = L; return 1;
+			case 36:	i = 1;
+			case 37:	if (i-=2<-1) i=-1;
+			case 39:	if (++i>L) i=L; return 1;
+			default:	i=I.gC()[0];
+						while(i<L&&S[i]){i++}
+						if (i==L) return 0;
+
+						c = String.fromCharCode(c)
+						if (R(M.charAt(i)).test(c)) {
+							D(1);
+							$[i++] = c;
+							j++;
+							while(i<L&&S[i]){i++}
+						}
+						return 0
+		}
+	}
+
+	var d=document, c='character', y=-100000, L=M.length, G=!c, i=0, j=0, $=M.split(''), S=M.split('');
+
+	for (var k=0;k<L;k++) if (/a|9|\*/.test($[k])) $[k]=S[k]=0;
+	I = typeof I=='string' ? d.getElementById(I) : I;
+
+	I.sC = function(l,g){
+		if(this.setSelectionRange) this.setSelectionRange(l,l);
+		else {
+			g = this.createTextRange();
+			g.collapse(true);
+			g.moveStart(c,y);
+			g.move(c,l);
+			g.select();
+		}
+	}
+	I.gC = function(r,b){
+		if (this.setSelectionRange) return [this.selectionStart,this.selectionEnd];
+		else {
+			r = d['selection'].createRange();
+			b = 0-r.duplicate().moveStart(c,y)
+			return [b,b+r.text.length]
+		}
+	}
+	I.onfocus = function(){
+		setTimeout(function(){N(0,!j);
+		if(I.value == '+7(___) ___-__-__')
+			I.setSelectionRange(3, 3);
+		},0);
+	}
+	I.onblur = function(){
+		j ? N(' ',0,1) : this.value=''
+	}
+	I.onkeydown = function(e,c){
+		e = e||event;
+		c = e.keyCode||e.charCode;
+		G = false;
+		if (c==8||c==46) {
+			G = true;
+			P(c);
+			N();
+			return !G
+		}
+		else if (!window.netscape&&(c>34&&c<38||c==39)) P(c)
+	}
+	I.onkeypress = function(e){
+		if (G) return G=!G;
+
+		e = e||event;
+
+		if (P(e.keyCode||e.charCode)) return !G;
+
+		N();
+
+		return G
+	}
+
+	if (d.all&&!window.opera) I.onpaste=V;
+	else I.addEventListener('input',V,false)
 }
